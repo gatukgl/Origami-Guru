@@ -6,36 +6,32 @@ Confidential and Proprietary - Qualcomm Connected Experiences, Inc.
 
 using UnityEngine;
 
-namespace Vuforia
+/// <summary>
+/// Helper behaviour used to hide augmented objects behind the video background.
+/// </summary>
+public class MaskOutBehaviour : MaskOutAbstractBehaviour
 {
-    /// <summary>
-    /// Helper behaviour used to hide augmented objects behind the video background.
-    /// </summary>
-    public class MaskOutBehaviour : MaskOutAbstractBehaviour
+    #region UNITY_MONOBEHAVIOUR_METHODS
+
+    void Start ()
     {
-        #region UNITY_MONOBEHAVIOUR_METHODS
-
-        void Start ()
+        if (QCARRuntimeUtilities.IsQCAREnabled())
         {
-            if (QCARRuntimeUtilities.IsQCAREnabled())
+            int numMaterials = this.renderer.materials.Length;
+            if (numMaterials == 1)
             {
-                Renderer rendererComp = GetComponent<Renderer>();
-                int numMaterials = rendererComp.materials.Length;
-                if (numMaterials == 1)
-                {
-                    rendererComp.sharedMaterial = maskMaterial;
-                }
-                else
-                {
-                    Material[] maskMaterials = new Material[numMaterials];
-                    for (int i = 0; i < numMaterials; i++)
-                        maskMaterials[i] = maskMaterial;
+                this.renderer.sharedMaterial = maskMaterial;
+            }
+            else
+            {
+                Material[] maskMaterials = new Material[numMaterials];
+                for (int i = 0; i < numMaterials; i++)
+                    maskMaterials[i] = maskMaterial;
 
-                    rendererComp.sharedMaterials = maskMaterials;
-                }
+                this.renderer.sharedMaterials = maskMaterials;
             }
         }
-
-        #endregion // UNITY_MONOBEHAVIOUR_METHODS
     }
+
+    #endregion // UNITY_MONOBEHAVIOUR_METHODS
 }

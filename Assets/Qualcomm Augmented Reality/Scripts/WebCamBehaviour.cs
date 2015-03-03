@@ -9,12 +9,10 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
-namespace Vuforia
+/// <summary>
+/// This MonoBehaviour manages the usage of a webcam for Play Mode in Windows or Mac.
+/// </summary>
+[RequireComponent(typeof(Camera))]
+public class WebCamBehaviour : WebCamAbstractBehaviour
 {
-    /// <summary>
-    /// This MonoBehaviour manages the usage of a webcam for Play Mode in Windows or Mac.
-    /// </summary>
-    public class WebCamBehaviour : WebCamAbstractBehaviour
-    {
-    }
 }

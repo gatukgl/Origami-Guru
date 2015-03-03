@@ -9,14 +9,11 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
-namespace Vuforia
+/// <summary>
+/// This behaviour associates a Virtual Button with a game object. Use the
+/// functionality in ImageTargetBehaviour to create and destroy Virtual Buttons
+/// at run-time.
+/// </summary>
+public class VirtualButtonBehaviour : VirtualButtonAbstractBehaviour
 {
-    /// <summary>
-    /// This behaviour associates a Virtual Button with a game object. Use the
-    /// functionality in ImageTargetBehaviour to create and destroy Virtual Buttons
-    /// at run-time.
-    /// </summary>
-    public class VirtualButtonBehaviour : VirtualButtonAbstractBehaviour
-    {
-    }
 }

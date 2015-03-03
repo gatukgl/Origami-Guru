@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="8" size="500.000000 405.143341" />
+    <ImageTarget name="crane_step_08_success" size="500.000000 405.143341" />
+    <ImageTarget name="crane_step_07" size="500.000000 1709.883667" />
+    <ImageTarget name="crane_step_06" size="500.000000 735.000000" />
+    <ImageTarget name="crane_step_04" size="500.000000 1075.833374" />
+    <ImageTarget name="crane_step_03" size="500.000000 493.125000" />
+    <ImageTarget name="crane_step_02" size="500.000000 926.666687" />
+    <ImageTarget name="crane_step_01" size="500.000000 892.097290" />
     <ImageTarget name="6" size="500.000000 936.000000" />
-    <ImageTarget name="7" size="500.000000 892.097290" />
-    <ImageTarget name="5" size="500.000000 926.666687" />
-    <ImageTarget name="4" size="500.000000 1709.883667" />
-    <ImageTarget name="2" size="500.000000 735.000000" />
-    <ImageTarget name="3" size="500.000000 1075.833374" />
-    <ImageTarget name="1" size="500.000000 493.125000" />
   </Tracking>
 </QCARConfig>

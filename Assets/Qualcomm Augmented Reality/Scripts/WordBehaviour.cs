@@ -6,13 +6,10 @@ Confidential and Proprietary - Qualcomm Connected Experiences, Inc.
 
 using UnityEngine;
 
-namespace Vuforia
+/// <summary>
+/// This class serves both as an augmentation definition for a Word in the editor
+/// as well as a tracked Word result at runtime
+/// </summary>
+public class WordBehaviour : WordAbstractBehaviour
 {
-    /// <summary>
-    /// This class serves both as an augmentation definition for a Word in the editor
-    /// as well as a tracked Word result at runtime
-    /// </summary>
-    public class WordBehaviour : WordAbstractBehaviour
-    {
-    }
 }
