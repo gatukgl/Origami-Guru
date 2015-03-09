@@ -15,6 +15,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
     #region PRIVATE_MEMBER_VARIABLES
  
     private TrackableBehaviour mTrackableBehaviour;
+    private bool isChooseModel = false;                 //this variable means user does/doesn't choose origami model to fold.
     
     #endregion // PRIVATE_MEMBER_VARIABLES
 
@@ -66,22 +67,31 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
 
     private void OnTrackingFound()
     {
-        Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
-        Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
-
-        // Enable rendering:
-        foreach (Renderer component in rendererComponents)
+        //user used to choose origami model to fold.
+        if(isChooseModel == true)
         {
-            component.enabled = true;
-        }
+            Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
+            Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
 
-        // Enable colliders:
-        foreach (Collider component in colliderComponents)
+            // Enable rendering:
+            foreach (Renderer component in rendererComponents)
+            {
+                component.enabled = true;
+            }
+
+            // Enable colliders:
+            foreach (Collider component in colliderComponents)
+            {
+                component.enabled = true;
+            }
+
+            Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
+        }
+        //user doesn't used to choose origami model to fold.
+        else
         {
-            component.enabled = true;
+            Debug.Log("User should choose any model first!!!!!!!!");   
         }
-
-        Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
     }
 
 
