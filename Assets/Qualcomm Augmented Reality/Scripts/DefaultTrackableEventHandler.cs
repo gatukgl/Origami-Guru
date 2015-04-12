@@ -15,11 +15,12 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
     #region PRIVATE_MEMBER_VARIABLES
  
     private TrackableBehaviour mTrackableBehaviour;
-    private bool isChooseModel = false;                 //this variable means user does/doesn't choose origami model to fold.
+    private bool isChooseModel = true;                 //this variable means user does/doesn't choose origami model to fold.
+    private bool showPopupWindow = false;
+    private bool createButton = false;
+
     
     #endregion // PRIVATE_MEMBER_VARIABLES
-
-
 
     #region UNTIY_MONOBEHAVIOUR_METHODS
     
@@ -90,6 +91,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
         //user doesn't used to choose origami model to fold.
         else
         {
+            //user choose origami model method.
+            showPopupWindow = true;
             Debug.Log("User should choose any model first!!!!!!!!");   
         }
     }
@@ -116,4 +119,24 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
     }
 
     #endregion // PRIVATE_METHODS
+
+
+    private void chooseModelContent(int windowID){
+        createButton = true;
+
+        GUI.Button(new Rect(10,30,80,20), "Choose Crane");
+
+        if(isChooseModel == false){
+            isChooseModel = true;
+        }
+    }
+
+    private void OnGUI(){
+        Rect WindowRect = new Rect(20, 20, 120, 50);
+        if(showPopupWindow == true){
+            GUI.Window(1, WindowRect, chooseModelContent, "Please choose a origami model");
+        }
+
+    }
+
 }

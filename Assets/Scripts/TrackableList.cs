@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-//using Vuforia;
 
 public class TrackableList : MonoBehaviour {
 	private DataSet mDataset = null;
